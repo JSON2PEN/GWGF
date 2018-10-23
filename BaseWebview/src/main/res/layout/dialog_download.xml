@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout"
+    android:layout_width="fill_parent"
+    android:layout_height="175dp"
+    android:layout_gravity="center"
+    android:background="@drawable/icon_btn_white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="6dp"
+        android:text="提示"
+        android:textColor="#646464"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="6dp"
+        android:background="#d2d2d2" />
+    <TextView
+        android:id="@+id/tv_design"
+        android:text="正在升级中..."
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:lineSpacingExtra="3dp"
+        android:textColor="#646464"
+        android:textSize="13sp"
+        android:layout_height="50dp" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.json.basewebview.Utils.UpdateApp.UpdateProgressBar
+            android:id="@+id/upb"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_gravity="center_vertical"
+            android:max="100"
+            android:progress="0" />
+    </FrameLayout>
+
+
+</LinearLayout>

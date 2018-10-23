@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#F7F7F8">
+
+        <FrameLayout
+            android:id="@+id/fl_title"
+            android:layout_width="match_parent"
+            android:layout_height="47dp">
+
+            <FrameLayout
+                android:id="@+id/fl_back"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <View
+                    android:layout_width="12dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="13dp"
+                    android:background="@drawable/back_black"
+                    android:textSize="18sp" />
+            </FrameLayout>
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/tv_web_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/main_text_color"
+                android:textSize="20sp"
+                />
+            <FrameLayout
+                android:id="@+id/fl_right_icon"
+                android:layout_gravity="right"
+                android:layout_width="60dp"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/iv_right_icon"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </FrameLayout>
+        <View
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider2" />
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <WebView
+                android:id="@+id/mWebView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layerType="software" />
+        </com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout>
+
+        <ViewStub
+            android:id="@+id/vs_error"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/view_weberror_refresh" />
+
+        <FrameLayout
+            android:id="@+id/fl_refresh"
+            android:layout_width="45dp"
+            android:visibility="invisible"
+            android:background="@drawable/bg_web_refresh"
+            android:layout_gravity="center"
+            android:layout_height="45dp">
+            <ImageView
+                android:id="@+id/iv_refresh"
+                android:layout_gravity="center"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

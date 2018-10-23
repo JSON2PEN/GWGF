@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/ll_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ViewStub
+            android:id="@+id/vs_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/title_bindbase"/>
+
+        <FrameLayout
+            android:id="@+id/fl_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+
+            <FrameLayout
+                android:id="@+id/fl_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ViewStub
+                android:id="@+id/vs_status"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout="@layout/vs_status" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

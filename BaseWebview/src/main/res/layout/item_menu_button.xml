@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/fl_home"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:background="@drawable/menu_bg_selector"
+       >
+        <!-- android:background="@drawable/menu_bg_selector"-->
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.3dp"
+            android:background="#888888" />
+
+        <TextView
+            android:id="@+id/tv_item_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@drawable/pic_menu_home"
+            android:drawablePadding="5dp"
+            android:text="首页"
+            android:textColor="#333333"
+            android:textSize="16sp" />
+    </FrameLayout>
+</FrameLayout>

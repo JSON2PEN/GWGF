@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">顾问工坊</string>
+    <string name="str_marketing">事件营销</string>
+    <string name="str_approval">审批</string>
+    <string name="str_management">客户管理</string>
+    <string name="str_financial">资讯</string>
+</resources>

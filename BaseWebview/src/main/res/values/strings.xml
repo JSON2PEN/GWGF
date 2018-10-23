@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BaseWebView</string>
+    <string name="web_error">网络不好,请连接网络后再试~</string>
+</resources>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_title"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="50dp">
+
+    <FrameLayout
+        android:id="@+id/fl_back"
+        android:layout_width="60dp"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_title_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/back_black" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_web_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textColor="@color/main_text_color"
+        android:textSize="20sp" />
+
+    <FrameLayout
+        android:id="@+id/fl_right_icon"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_right_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="bottom"
+        android:background="#dedede" />
+</FrameLayout>

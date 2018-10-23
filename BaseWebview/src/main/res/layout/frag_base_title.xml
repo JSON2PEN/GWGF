@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:id="@+id/fl_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#F7F7F8">
+
+        <FrameLayout
+            android:layout_gravity="bottom"
+            android:id="@+id/fl_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <FrameLayout
+                android:visibility="gone"
+                android:id="@+id/fl_back"
+                android:layout_width="60dp"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/iv_title_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="13dp"
+                    android:src="@drawable/back_black" />
+            </FrameLayout>
+            <TextView
+                android:layout_gravity="center"
+                android:id="@+id/tv_web_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/main_text_color"
+                android:textSize="20sp"
+                />
+            <FrameLayout
+                android:id="@+id/fl_right_icon"
+                android:layout_gravity="right"
+                android:layout_width="60dp"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/iv_right_icon"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+        </FrameLayout>
+        <View
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider2" />
+    </FrameLayout>
+    <FrameLayout
+        android:id="@+id/fl_frag_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

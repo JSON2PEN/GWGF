@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="Orange">#e75946</color>
+    <color name="Yellow">#f4d227</color>
+    <color name="Blue">#4674e7</color>
+    <color name="Green">#0ba62c</color>
+
+    <!--webview需要添加的-->
+    <color name="bg_web_default">#ffffff</color><!--webview默认背景色 #1c1a22-->
+    <color name="bg_web_refresh">#37333c</color><!--webview刷新背景色-->
+    <color name="text_web_default">#b2acbb</color><!--webview没网提示语颜色-->
+    <color name="co_refresh_bg">#f0eff5</color><!--webview刷新的背景色-->
+    <color name="main_text_color">#333333</color><!--系统默认字体-->
+    <color name="divider2">#DEDEDE</color><!--分割线颜色-->
+    <color name="Menu_bg_select">#f0eff5</color>
+</resources>

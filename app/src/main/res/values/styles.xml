@@ -1,0 +1,12 @@
+<resources>
+    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="ThemeSplash" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+    <item name="android:windowBackground">@drawable/splash</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowDisablePreview">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

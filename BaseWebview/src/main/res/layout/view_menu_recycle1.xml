@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+            <ListView
+                android:layout_marginTop="7dp"
+                android:id="@+id/lv_content"
+                android:layout_width="97dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/bg_menu_buttom" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="8.5dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="22dp"
+            android:src="@drawable/pic_menu_top" />
+    </FrameLayout>
+</FrameLayout>
