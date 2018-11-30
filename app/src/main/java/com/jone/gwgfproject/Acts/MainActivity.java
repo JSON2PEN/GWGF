@@ -1,7 +1,6 @@
 package com.jone.gwgfproject.Acts;
 
 import android.Manifest;
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
@@ -12,9 +11,6 @@ import android.widget.TextView;
 import com.jone.gwgfproject.Configs.H5Urls;
 import com.jone.gwgfproject.R;
 import com.json.basewebview.Base.BaseAct;
-import com.json.basewebview.NetFrame.Dialog.BaseBack;
-import com.json.basewebview.NetFrame.Dialog.ProgressObserver;
-import com.json.basewebview.Utils.AndroidBug5497Workaround;
 import com.json.basewebview.Utils.CommonUtils;
 import com.json.basewebview.Utils.MyToast;
 import com.json.basewebview.Utils.RxBus.RxBus;

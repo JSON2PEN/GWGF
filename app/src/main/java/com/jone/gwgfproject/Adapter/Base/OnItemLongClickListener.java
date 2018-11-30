@@ -1,4 +1,4 @@
-package com.jone.gwgfproject.Adapter;
+package com.jone.gwgfproject.Adapter.Base;
 
 /**
  * Created by jingbin on 16/7/4.

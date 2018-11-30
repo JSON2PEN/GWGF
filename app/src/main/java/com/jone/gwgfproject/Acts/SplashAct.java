@@ -56,9 +56,7 @@ public class SplashAct extends BaseAct {
     }
 
     private void doJump() {
-        Intent intent =new Intent(this, MainActivity.class);
-        intent.putExtra(WebAct.FULL_URL,"http://gdnh.cytx360.com/Customer/Customer");
-        startActivity(intent);
+        startActivity(new Intent(this,GuideAct.class));
         finish();
     }
 

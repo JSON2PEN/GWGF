@@ -1,4 +1,4 @@
-package com.jone.gwgfproject.Adapter;
+package com.jone.gwgfproject.Adapter.Base;
 
 /**
  * 增加头布局,脚布局的模型

@@ -6,6 +6,11 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: rootProject.ext.applicationId,
+                JPUSH_APPKEY : "ea83b02a0f9af9c271cced9a", //JPush上注册的包名对应的appkey.旧版:  2513d9b1c782df891b85bf0d  d00d62d36343d66c3d177549
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
+        ]
     }
     buildTypes {
         release {

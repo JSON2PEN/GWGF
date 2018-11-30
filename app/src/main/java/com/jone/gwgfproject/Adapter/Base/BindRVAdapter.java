@@ -1,4 +1,4 @@
-package com.jone.gwgfproject.Adapter;
+package com.jone.gwgfproject.Adapter.Base;
 
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
