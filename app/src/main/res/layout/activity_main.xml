@@ -1,73 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical">
-
-<FrameLayout
-    android:id="@+id/fl_web_content"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1" />
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-<View
-    android:layout_width="match_parent"
-    android:layout_height="0.5dp"
-    android:background="#d7d7d7" />
+    <FrameLayout
+        android:id="@+id/fl_web_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-<LinearLayout
-    android:id="@+id/ll_tab_buttom"
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="#fefefe"
-    android:orientation="horizontal">
-    <TextView
-        android:id="@+id/tv_tab_management"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/pic_financial_selector"
-        android:gravity="center_horizontal"
-        android:paddingTop="5dp"
-        android:scaleType="centerInside"
-        android:text="@string/str_management"
-        android:textColor="@drawable/menu_textcolor_selector" />
-
-    <TextView
-        android:id="@+id/tv_tab_approval"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/pic_asset_selector"
-        android:gravity="center_horizontal"
-        android:paddingTop="5dp"
-        android:scaleType="centerInside"
-        android:text="@string/str_approval"
-        android:textColor="@drawable/menu_textcolor_selector" />
-
-    <TextView
-        android:id="@+id/tv_tab_marketing"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/pic_gold_selector"
-        android:gravity="center_horizontal"
-        android:paddingTop="5dp"
-        android:scaleType="centerInside"
-        android:text="@string/str_marketing"
-        android:textColor="@drawable/menu_textcolor_selector" />
-
-    <TextView
-        android:id="@+id/tv_tab_financial"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_weight="1"
-        android:drawableTop="@drawable/pic_forex_selector"
-        android:gravity="center_horizontal"
-        android:paddingTop="5dp"
-        android:scaleType="centerInside"
-        android:text="@string/str_financial"
-        android:textColor="@drawable/menu_textcolor_selector" />
-
-</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#d7d7d7" />
+    <com.jone.gwgfproject.widgets.tab.MenuTab
+        android:id="@+id/menu_tab"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
 </LinearLayout>

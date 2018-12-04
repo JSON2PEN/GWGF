@@ -1,15 +1,19 @@
 package com.jone.gwgfproject.Acts;
 
 import android.Manifest;
+import android.graphics.Color;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.jone.gwgfproject.AppConfigs;
 import com.jone.gwgfproject.Configs.H5Urls;
 import com.jone.gwgfproject.R;
+import com.jone.gwgfproject.widgets.tab.MenuTab;
 import com.json.basewebview.Base.BaseAct;
 import com.json.basewebview.Utils.CommonUtils;
 import com.json.basewebview.Utils.MyToast;
@@ -24,21 +28,14 @@ import com.umeng.analytics.MobclickAgent;
 import io.reactivex.functions.Consumer;
 
 
-public class MainActivity extends BaseAct implements View.OnClickListener, UpdateAppUtil.UpadteCallBack {
+public class MainActivity extends BaseAct implements UpdateAppUtil.UpadteCallBack {
 
-    public TextView tvTabFinancial;
-    public TextView tvTabMangement;
-    public TextView tvTabApproval;
-    public TextView tvTabMarketing;
-    public LinearLayout llTabButtom;
+
     public FragmentTransaction fragmentTransaction;
     public int currentTab = -1;
-   /* public BaseTiFrag managementWeb;
-    public BaseTiFrag approvalWeb;
-    public BaseTabTitleFrag marketingWeb;
-    public BaseTabTitleFrag financialWeb;*/
     private boolean showRedPoint;
     public UpdateAppUtil updateAppUtil;
+    public MenuTab mMenuTab;
 
     @Override
     protected boolean getIsDropBG() {
@@ -59,41 +56,21 @@ public class MainActivity extends BaseAct implements View.OnClickListener, Updat
     protected void init() {
 //        AndroidBug5497Workaround.assistActivity(this);
         initView();
-        showHomeTab();
         canUpdate();
-        getMsgNum();
+
     }
 
     private void initView() {
-        tvTabMangement = findView(R.id.tv_tab_management);
-        tvTabApproval = findView(R.id.tv_tab_approval);
-        tvTabMarketing = findView(R.id.tv_tab_marketing);
-        tvTabFinancial = findView(R.id.tv_tab_financial);
-        llTabButtom = findView(R.id.ll_tab_buttom);
-
-        tvTabMangement.setOnClickListener(this);
-        tvTabApproval.setOnClickListener(this);
-        tvTabMarketing.setOnClickListener(this);
-        tvTabFinancial.setOnClickListener(this);
+        initCustomTab();
     }
 
-    private void getMsgNum() {
-     /*   new ApiMethods().getMsgNum(new MsgNumRequest(SPUtils.getString(SPUtils.UserToken, ""))).execute(new ProgressObserver(new BaseBack<MsgNumResponse>() {
-            @Override
-            public void onSuccess(MsgNumResponse response) {
-                if (response.Data > 0) {
-                    showRedPoint = true;
-                    if (managementWeb != null) {
-                        managementWeb.changeRedPoint(showRedPoint);
-                    }
-                } else {
-                    showRedPoint = false;
-                    if (managementWeb != null) {
-                        managementWeb.changeRedPoint(showRedPoint);
-                    }
-                }
-            }
-        }));*/
+    private void initCustomTab() {
+        mMenuTab = findViewById(R.id.menu_tab);
+        mMenuTab.setTabs(AppConfigs.getTabSelBgs(),
+                AppConfigs.getTabNorBgs(),
+                AppConfigs.getTabTexts(),
+                new int[]{getResources().getColor(R.color.menu_text_selecter), getResources().getColor(R.color.menu_text_normal)},
+                currentIndex -> Toast.makeText(MainActivity.this, "当前点击"+currentIndex, Toast.LENGTH_SHORT).show());
     }
 
     private void canUpdate() {
@@ -118,50 +95,10 @@ public class MainActivity extends BaseAct implements View.OnClickListener, Updat
         return (T) findViewById(viewId);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.tv_tab_management:
-                showHomeTab();
-                break;
-            case R.id.tv_tab_approval:
-                selectTab(tvTabApproval);
-                currentTab = 2;
-                showTabWeb(H5Urls.getApprovalUrl());
-                break;
-            case R.id.tv_tab_marketing:
-                selectTab(tvTabMarketing);
-                currentTab = 3;
-                showTabWeb(null);
-                break;
-            case R.id.tv_tab_financial:
-                selectTab(tvTabFinancial);
-                currentTab = 4;
-                showTabWeb(null);
-                break;
-        }
-    }
 
-    private void showHomeTab() {
-        selectTab(tvTabMangement);
-        currentTab = 1;
-        showTabWeb(H5Urls.getCustomerUrl());
-    }
 
-    private void selectTab(TextView tvTab) {
-        isSame(tvTab, tvTabApproval);
-        isSame(tvTab, tvTabFinancial);
-        isSame(tvTab, tvTabMarketing);
-        isSame(tvTab, tvTabMangement);
-    }
 
-    private void isSame(TextView tvTab, TextView tvTabAsset) {
-        if (tvTab == tvTabAsset) {
-            tvTabAsset.setSelected(true);
-        } else {
-            tvTabAsset.setSelected(false);
-        }
-    }
+
 
     private Fragment addFrag;
 

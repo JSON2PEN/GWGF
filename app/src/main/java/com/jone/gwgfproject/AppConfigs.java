@@ -19,7 +19,7 @@ public class AppConfigs {
     }
     //main界面tab描述文字
     public static String[] getTabTexts(){
-        return new String[]{"客户管理","审批","事件营销","事件营销"};
+        return new String[]{"客户管理","审批","事件营销","资讯"};
     }
 
 }
