@@ -25,11 +25,13 @@ import com.json.basewebview.Utils.UpdateApp.VersionsInfo;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.umeng.analytics.MobclickAgent;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.reactivex.functions.Consumer;
 
 
 public class MainActivity extends BaseAct implements UpdateAppUtil.UpadteCallBack {
-
 
     public FragmentTransaction fragmentTransaction;
     public int currentTab = -1;
@@ -66,11 +68,32 @@ public class MainActivity extends BaseAct implements UpdateAppUtil.UpadteCallBac
 
     private void initCustomTab() {
         mMenuTab = findViewById(R.id.menu_tab);
-        mMenuTab.setTabs(AppConfigs.getTabSelBgs(),
+        mMenuTab.setTabs(getTabList(),currentIndex -> Toast.makeText(MainActivity.this, "当前点击"+currentIndex, Toast.LENGTH_SHORT).show());
+     /*   mMenuTab.setTabs(AppConfigs.getTabSelBgs(),
                 AppConfigs.getTabNorBgs(),
                 AppConfigs.getTabTexts(),
                 new int[]{getResources().getColor(R.color.menu_text_selecter), getResources().getColor(R.color.menu_text_normal)},
                 currentIndex -> Toast.makeText(MainActivity.this, "当前点击"+currentIndex, Toast.LENGTH_SHORT).show());
+    */}
+    private List<MenuTab.Tab> getTabList(){
+        List<MenuTab.Tab> tabs =new ArrayList<>();
+        int[] imgSels =AppConfigs.getTabSelBgs();
+        int[] imgNors =AppConfigs.getTabNorBgs();
+        String[] tabTexts =AppConfigs.getTabTexts();
+        int size =tabTexts.length;
+        for (int i = 0; i < size; i++) {
+            MenuTab.Tab tab=new MenuTab.Tab().
+                    setImgNor(imgNors[i]).
+                    setImgSel(imgSels[i]).
+                    setText(tabTexts[i]).
+                    setTextNorColor(getResources().getColor(R.color.menu_text_normal)).
+                    setTextSelColor(getResources().getColor(R.color.menu_text_selecter));
+            if (i==0){
+                tab.setSelected(true);
+            }
+            tabs.add(tab);
+        }
+        return tabs;
     }
 
     private void canUpdate() {
